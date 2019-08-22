@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{8F9394F4-FCCC-4A77-92DC-288633540089}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{A11D7EF9-C1A3-427D-9366-5CAFA9313D52}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -115,7 +115,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="regInsertados">
       <DTS:VariableValue
-        DTS:DataType="8">100</DTS:VariableValue>
+        DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -833,14 +833,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}"
-              SQLTask:SqlStatementSource="exec dbo.spInsertartlData" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="NewParameterName"
-                SQLTask:DtsVariableName="User::regInsertados"
-                SQLTask:ParameterDirection="Output"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
+              SQLTask:SqlStatementSource="exec  dbo.spInsertartlData" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -1280,56 +1273,7 @@
           DTS:To="Package\Contenedor de secuencias\Los que no cargaron" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Tarea Enviar correo"
-      DTS:CreationName="Microsoft.SendMailTask"
-      DTS:Description="Tarea Enviar correo"
-      DTS:Disabled="True"
-      DTS:DTSID="{BC6A3994-3CAF-418C-A585-039414766E9C}"
-      DTS:ExecutableType="Microsoft.SendMailTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Tarea Enviar correo"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData />
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Tarea Enviar correo 1"
-      DTS:CreationName="Microsoft.SendMailTask"
-      DTS:Description="Tarea Enviar correo"
-      DTS:DTSID="{C85614E3-13DD-44C0-B6D6-A45CA091010D}"
-      DTS:ExecutableType="Microsoft.SendMailTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Tarea Enviar correo 1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:PropertyExpression
-        DTS:Name="MessageSource">@[User::regInsertados]</DTS:PropertyExpression>
-      <DTS:ObjectData>
-        <SendMailTask:SendMailTaskData
-          SendMailTask:MessageSource="100" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
-  <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Restricción]"
-      DTS:CreationName=""
-      DTS:DTSID="{BFE2C19E-C102-439E-8472-DCBB3E283CAE}"
-      DTS:From="Package\Contenedor de secuencias"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Restricción"
-      DTS:To="Package\Tarea Enviar correo"
-      DTS:Value="1" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{C70BC087-EC82-4752-BD01-BC074D8CF2AF}"
-      DTS:From="Package\Contenedor de secuencias"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Restricción 1"
-      DTS:To="Package\Tarea Enviar correo 1" />
-  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
 <!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
@@ -1341,11 +1285,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Tarea Enviar correo"
-          TopLeft="534,187" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="138,42"
           Id="Package\Contenedor de secuencias\Borrar Stage"
@@ -1431,60 +1371,10 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="386,434"
-          Size="386,477"
+          PanelSize="439,434"
+          Size="439,477"
           Id="Package\Contenedor de secuencias"
           TopLeft="41,44" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="427,206.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="107,0"
-              Start="0,0"
-              End="99.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="99.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="38.22130859375,5,23.0573828125,9.421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="181,42"
-          Id="Package\Tarea Enviar correo 1"
-          TopLeft="519,337" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="427,359.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="92,0"
-              Start="0,0"
-              End="84.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="84.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1492,7 +1382,7 @@
     design-time-name="Package\Contenedor de secuencias\Excel a Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="153,42"
           Id="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel"
@@ -1505,30 +1395,6 @@
           Size="185,42"
           Id="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server"
           TopLeft="242,229" />
-        <EdgeLayout
-          Id="Package\Contenedor de secuencias\Excel a Stage.Paths[Salida de conversión de datos]"
-          TopLeft="333.5,172">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57"
-              Start="0,0"
-              End="0,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Contenedor de secuencias\Excel a Stage.Paths[Salida de origen de Excel]"
           TopLeft="331.5,86">
@@ -1548,27 +1414,55 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Excel a Stage.Paths[Salida de conversión de datos]"
+          TopLeft="333.5,172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Contenedor de secuencias\Los que no cargaron">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="195,42"
-          Id="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano"
-          TopLeft="294,142" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="164,42"
           Id="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB"
           TopLeft="306,33" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano"
+          TopLeft="294,142" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias\Los que no cargaron.Paths[Salida de origen de OLE DB]"
           TopLeft="389.75,75">
@@ -1588,9 +1482,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
