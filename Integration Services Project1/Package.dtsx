@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/28/2019 1:38:59 PM"
@@ -12,7 +12,7 @@
   DTS:ObjectName="Package"
   DTS:PackageType="5"
   DTS:VersionBuild="36"
-  DTS:VersionGUID="{002BFDA7-487A-442E-855C-0251566A7958}">
+  DTS:VersionGUID="{F03DC0E8-6BAF-421E-87B2-7688CFF6BAFB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -481,8 +481,8 @@
                   <connections>
                     <connection
                       refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Connections[OleDbConnection]"
-                      connectionManagerID="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DDDR_TDT]"
+                      connectionManagerID="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:invalid"
+                      connectionManagerRefId="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:invalid"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -627,8 +627,8 @@
                   <connections>
                     <connection
                       refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Connections[OleDbConnection]"
-                      connectionManagerID="{5C675020-B75F-4457-B2C2-24D9353F4533}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[Excel]"
+                      connectionManagerID="{5C675020-B75F-4457-B2C2-24D9353F4533}:invalid"
+                      connectionManagerRefId="{5C675020-B75F-4457-B2C2-24D9353F4533}:invalid"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -1051,8 +1051,8 @@
                   <connections>
                     <connection
                       refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Connections[OleDbConnection]"
-                      connectionManagerID="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[DDDR_TDT]"
+                      connectionManagerID="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:invalid"
+                      connectionManagerRefId="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:invalid"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
