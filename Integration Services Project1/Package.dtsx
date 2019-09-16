@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/28/2019 1:38:59 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{F03DC0E8-6BAF-421E-87B2-7688CFF6BAFB}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{648A98FA-E56E-4B6B-9215-3AF0350134D0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -481,8 +481,8 @@
                   <connections>
                     <connection
                       refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Connections[OleDbConnection]"
-                      connectionManagerID="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:invalid"
-                      connectionManagerRefId="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:invalid"
+                      connectionManagerID="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DDDR_TDT]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -627,8 +627,8 @@
                   <connections>
                     <connection
                       refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Connections[OleDbConnection]"
-                      connectionManagerID="{5C675020-B75F-4457-B2C2-24D9353F4533}:invalid"
-                      connectionManagerRefId="{5C675020-B75F-4457-B2C2-24D9353F4533}:invalid"
+                      connectionManagerID="{5C675020-B75F-4457-B2C2-24D9353F4533}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Excel]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -1051,8 +1051,8 @@
                   <connections>
                     <connection
                       refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Connections[OleDbConnection]"
-                      connectionManagerID="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:invalid"
-                      connectionManagerRefId="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:invalid"
+                      connectionManagerID="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DDDR_TDT]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -1315,6 +1315,10 @@
           Id="Package\Contenedor de secuencias\Borrar Stage"
           TopLeft="75,60" />
         <NodeLayout
+          Size="185,42"
+          Id="Package\Contenedor de secuencias\Compeltar tlDataStage"
+          TopLeft="57,243" />
+        <NodeLayout
           Size="142,42"
           Id="Package\Contenedor de secuencias\Excel a Stage"
           TopLeft="73,156" />
@@ -1349,32 +1353,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 2]"
-          TopLeft="147.5,379">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="185,42"
-          Id="Package\Contenedor de secuencias\Compeltar tlDataStage"
-          TopLeft="57,243" />
-        <EdgeLayout
           Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 1]"
           TopLeft="146.75,198">
           <EdgeLayout.Curve>
@@ -1388,6 +1366,28 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 2]"
+          TopLeft="147.5,379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1424,7 +1424,7 @@
           PanelSize="516,522"
           Size="516,565"
           Id="Package\Contenedor de secuencias"
-          TopLeft="41,159" />
+          TopLeft="57,21" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
