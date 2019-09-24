@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="PackageANT"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{B3CB5913-3C53-41F2-851F-F74A39ED09FE}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{F5DFF6A3-C9E5-4CFC-83EF-40804E804786}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -481,8 +481,8 @@
                   <connections>
                     <connection
                       refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Connections[OleDbConnection]"
-                      connectionManagerID="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:invalid"
-                      connectionManagerRefId="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:invalid"
+                      connectionManagerID="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DDDR_TDT]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -609,7 +609,7 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -627,8 +627,8 @@
                   <connections>
                     <connection
                       refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Connections[OleDbConnection]"
-                      connectionManagerID="{5C675020-B75F-4457-B2C2-24D9353F4533}:invalid"
-                      connectionManagerRefId="{5C675020-B75F-4457-B2C2-24D9353F4533}:invalid"
+                      connectionManagerID="{5C675020-B75F-4457-B2C2-24D9353F4533}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Excel]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -872,8 +872,7 @@
                   contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
                   description="Destino de archivo plano"
                   localeId="9226"
-                  name="Destino de archivo plano"
-                  version="1">
+                  name="Destino de archivo plano">
                   <properties>
                     <property
                       dataType="System.Boolean"
@@ -1026,7 +1025,7 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -1052,8 +1051,8 @@
                   <connections>
                     <connection
                       refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Connections[OleDbConnection]"
-                      connectionManagerID="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:invalid"
-                      connectionManagerRefId="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:invalid"
+                      connectionManagerID="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DDDR_TDT]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -1493,6 +1492,19 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server">
     <Properties>
