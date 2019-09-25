@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="PackageMADR_Creditos"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{ACE2903A-8AF2-4A89-9E81-22212BB470C1}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{BABECFA9-4D4F-4A9A-A7F9-11D45E092417}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -127,13 +127,13 @@
                       synchronousInputId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Departamento]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Departamento]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           length="20"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Departamento]"
-                          name="Copia de Departamento"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Departamento]"
+                          name="Departamento"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -148,13 +148,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Municipio]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Municipio]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           length="20"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Municipio]"
-                          name="Copia de Municipio"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Municipio]"
+                          name="Municipio"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -169,12 +169,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Variable]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Variable]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Variable]"
-                          name="Copia de Variable"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Variable]"
+                          name="Variable"
                           precision="18"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -190,12 +190,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de NombreVariable]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[NombreVariable]"
                           dataType="nText"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de NombreVariable]"
-                          name="Copia de NombreVariable"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[NombreVariable]"
+                          name="NombreVariable"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -210,12 +210,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Valor]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Valor]"
                           dataType="cy"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Valor]"
-                          name="Copia de Valor"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Valor]"
+                          name="Valor"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -230,12 +230,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de anored]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[anored]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de anored]"
-                          name="Copia de anored"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[anored]"
+                          name="anored"
                           precision="18"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -251,12 +251,12 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de mesred]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[mesred]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de mesred]"
-                          name="Copia de mesred"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[mesred]"
+                          name="mesred"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -271,13 +271,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Etiqueta]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Etiqueta]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           length="200"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Etiqueta]"
-                          name="Copia de Etiqueta"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Etiqueta]"
+                          name="Etiqueta"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -537,15 +537,9 @@
                '' As NombreVariable,
                anored,
                mesred,
-               Sum(VCRRED)  AS  Valor,
+               VCRRED  AS  Valor,
                '' AS Etiqueta
-         FROM   [Creditos$]
-         GROUP  BY TUSRED,
-                   DEPRED,
-                   MUNRED,
-                   anored,
-                   mesred,
-                   PNJRED</property>
+         FROM   [Creditos$]</property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
