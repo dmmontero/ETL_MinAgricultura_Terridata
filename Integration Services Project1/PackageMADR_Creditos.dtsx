@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="PackageMADR_Creditos"
   DTS:PackageType="5"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{7225C9C1-8AD8-4C88-89A5-2D517F5E8F2A}">
+  DTS:VersionBuild="61"
+  DTS:VersionGUID="{1C07F92F-8275-4536-A611-653A8748493E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -403,100 +403,100 @@
                       name="Entrada de destino de SQL Server">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Departamento]"
-                          cachedDataType="wstr"
-                          cachedLength="20"
-                          cachedName="Departamento"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Código Departamento]"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Departamento]" />
-                        <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Municipio]"
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="Municipio"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Código Municipio]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Municipio]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Municipio]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Variable]"
                           cachedDataType="numeric"
                           cachedName="Variable"
                           cachedPrecision="18"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Código Variable]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Variable]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Variable]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[NombreVariable]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="NombreVariable"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Nombre Variable (Nombre del Indicador]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Nombre_Variable]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NombreVariable]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Valor]"
                           cachedDataType="cy"
                           cachedName="Valor"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Numero (Valor cuantitativo)]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Numero]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Valor]" />
-                        <inputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[anored]"
-                          cachedDataType="numeric"
-                          cachedName="anored"
-                          cachedPrecision="18"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Año (Año de vigencia del dato)]"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[anored]" />
-                        <inputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[mesred]"
-                          cachedDataType="i4"
-                          cachedName="mesred"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Mes (Mes de vigencia del dato)]"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[mesred]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Etiqueta]"
                           cachedDataType="wstr"
                           cachedLength="200"
                           cachedName="Etiqueta"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Etiqueta (Valor alfanumérico de gestión )]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Etiqueta]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Etiqueta]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[anored]"
+                          cachedDataType="numeric"
+                          cachedName="anored"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Año]"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[anored]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[mesred]"
+                          cachedDataType="i4"
+                          cachedName="mesred"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Mes]"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[mesred]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Departamento]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Departamento"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Departamento]"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Departamento]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Código Departamento]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Municipio]"
                           dataType="wstr"
                           length="20"
-                          name="Código Departamento" />
+                          name="Codigo_Municipio" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Código Municipio]"
-                          dataType="wstr"
-                          length="20"
-                          name="Código Municipio" />
-                        <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Código Variable]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Variable]"
                           dataType="numeric"
-                          name="Código Variable"
+                          name="Codigo_Variable"
                           precision="18" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Nombre Variable (Nombre del Indicador]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Nombre_Variable]"
                           dataType="wstr"
                           length="255"
-                          name="Nombre Variable (Nombre del Indicador" />
+                          name="Nombre_Variable" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Numero (Valor cuantitativo)]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Numero]"
                           dataType="cy"
-                          name="Numero (Valor cuantitativo)" />
+                          name="Numero" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Año (Año de vigencia del dato)]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Año]"
                           dataType="numeric"
-                          name="Año (Año de vigencia del dato)"
+                          name="Año"
                           precision="18" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Mes (Mes de vigencia del dato)]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Mes]"
                           dataType="i4"
-                          name="Mes (Mes de vigencia del dato)" />
+                          name="Mes" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Etiqueta (Valor alfanumérico de gestión )]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Etiqueta]"
                           dataType="wstr"
                           length="200"
-                          name="Etiqueta (Valor alfanumérico de gestión )" />
+                          name="Etiqueta" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Departamento]"
+                          dataType="wstr"
+                          length="20"
+                          name="Codigo_Departamento" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -654,13 +654,11 @@
                           name="Variable" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Departamento]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="nText"
                           name="Departamento" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Municipio]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="nText"
                           name="Municipio" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[anored]"
@@ -677,13 +675,11 @@
                           name="Valor" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[NombreVariable]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="nText"
                           name="NombreVariable" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Etiqueta]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="nText"
                           name="Etiqueta" />
                       </externalMetadataColumns>
                     </output>
@@ -699,20 +695,17 @@
                           name="Variable" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Departamento]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="nText"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Departamento]"
                           name="Departamento" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Municipio]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="nText"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Municipio]"
                           name="Municipio" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[NombreVariable]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="nText"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[NombreVariable]"
                           name="NombreVariable" />
                         <outputColumn
@@ -733,8 +726,7 @@
                           name="Valor" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Etiqueta]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="nText"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Etiqueta]"
                           name="Etiqueta" />
                         <outputColumn
@@ -839,7 +831,7 @@
     design-time-name="Package\Contenedor de secuencias\Excel a Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="185,42"
           Id="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server"
@@ -893,7 +885,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,16.75,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
