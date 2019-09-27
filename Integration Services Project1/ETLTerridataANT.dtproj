@@ -26,12 +26,14 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-TIC9ICJ</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAPsFKrPUxjESN4F1T0oth5AAAAAACAAAAAAAQZgAAAAEAACAAAAATUyTiwKqKzxVjA6sb2USES8DlSf9W+9A7PgvQP8YdJwAAAAAOgAAAAAIAACAAAAAkJwQzdMnbuELxHPBFCvkNFiROKnf8567BFMu/zq0OGJAAAABTaZIF+p1UL7f9JW+jfNTBrKXa92niLclW8kJ293D+uLlhtY1euhYCdKkDXnJA2s+9WRTRrWpq06+uoyU/LQS1GAxf7clhrJNKYrAxjXuKopfMkE7Q0hiUXguwR66fy72Kg9anMzfqUgsZt3BFVEyghD/Ey2oNNzNwR7K70YDJRZ3S26lVn4iTIRYzIdFm8aJAAAAArj/r0uyy1xFyATK7xkNZKn3ZWVCN7cfYXYoITA3ngBvdSBbguLU7u2dlWZmyLDC+KRJpC7veJJcM3GFfpYfkuw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAauqu8cdhp0iubJcxV0ezfwAAAAACAAAAAAADZgAAwAAAABAAAACS3JQ63oFEeHoeuxcaYM5pAAAAAASAAACgAAAAEAAAABRIrqcW29vndPfH2RbxMNiIAAAApfxh9PVYJKLE4VFOJsmXFAs23ApTF7wE+ArXMRb4jpvyfRqYjX0uWqrtsxChsKjo90tMc+XW93Q6LMzXcOBKxLiSjbD5LM/rpHqQ3NcQ7tF5ljKa2iLO+OLK5NIWz07DBe7/qjiZ/g8wg7jzGGHktcrwVdZXr9h0HJ9w+wLndaZTjhP0ap3rbRQAAAD6EVZ4GDHzIbzqOIY6wvktfqz2Hg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="PackageANT.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="PackageMADR_Creditos.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="PackageMADR_Viviendas.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="PackageUPRA_Irrigacion_.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Excel.conmgr" />
@@ -183,7 +185,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=DESKTOP-TIC9ICJ;Initial Catalog=DDDR_TDT;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=DNPWP38104\MSSQLSERVER_2016;Initial Catalog=DDDR_TDT;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -257,7 +259,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">DESKTOP-TIC9ICJ</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">DNPWP38104\MSSQLSERVER_2016</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -286,7 +288,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\TerridataBD\ABRIL - RFR99 AGRONET.XLSX;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\TerridataBD\Creditos.xlsx;Extended Properties="EXCEL 12.0 XML;HDR=YES";</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -301,7 +303,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">D:\TerridataBD\ABRIL - RFR99 AGRONET.XLSX</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">D:\TerridataBD\Creditos.xlsx</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -374,7 +376,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">D:\TerridataBD\ABRIL - RFR99 AGRONET.XLSX</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">D:\TerridataBD\Creditos.xlsx</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -400,10 +402,10 @@
                 <SSIS:Property SSIS:Name="Name">PackageANT</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">44</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">46</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{2A16607F-A649-44F3-927D-B026F0755A20}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3E46DD68-17FB-4674-A283-2F3F3AFE924B}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -615,10 +617,71 @@
                 <SSIS:Property SSIS:Name="Name">PackageMADR_Creditos</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">49</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">68</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F06BE417-5CE4-4330-AC0B-0AE618431F9C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7092332B-47A1-41A7-8BD8-A0EE7BFFA80B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="CodigoCategoria">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{1983ED4B-D530-4B04-8341-E9FAFE6F4A22}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">Categoris al cual pertenece el indicador</SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">19</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CodigoSubcategoria">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{D3445B02-8446-4706-86F7-63739A1349D0}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">Subcategoria al cual pertence el indicador</SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">1</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">3</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+              </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="PackageMADR_Viviendas.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{B3D7D0C9-5F6C-400A-A0DB-C31A3E52385C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">PackageMADR_Viviendas</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9D3BD0B8-BC21-4001-9A5A-85667053DE95}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="PackageUPRA_Irrigacion_.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{62B8B107-D723-4B1A-B72F-A98B08B274A1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">PackageUPRA_Irrigacion_</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{56589C6C-2869-4860-BAEF-0C5E80519E19}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

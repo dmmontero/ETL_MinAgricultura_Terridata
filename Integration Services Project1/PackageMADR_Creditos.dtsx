@@ -11,10 +11,34 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="PackageMADR_Creditos"
   DTS:PackageType="5"
-  DTS:VersionBuild="61"
-  DTS:VersionGUID="{1C07F92F-8275-4536-A611-653A8748493E}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{3802CFB1-18FB-4E2A-9CA4-388E79F4A4F3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:Description="Categoris al cual pertenece el indicador"
+      DTS:DTSID="{1983ED4B-D530-4B04-8341-E9FAFE6F4A22}"
+      DTS:ObjectName="CodigoCategoria"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">19</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:Description="Subcategoria al cual pertence el indicador"
+      DTS:DTSID="{D3445B02-8446-4706-86F7-63739A1349D0}"
+      DTS:ObjectName="CodigoSubcategoria"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">3</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -72,20 +96,19 @@
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Departamento]"
                           cachedDataType="wstr"
-                          cachedLength="20"
+                          cachedLength="255"
                           cachedName="Departamento"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Departamento]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Municipio]"
                           cachedDataType="wstr"
-                          cachedLength="20"
+                          cachedLength="255"
                           cachedName="Municipio"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Municipio]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Variable]"
-                          cachedDataType="numeric"
+                          cachedDataType="i4"
                           cachedName="Variable"
-                          cachedPrecision="18"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Variable]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[NombreVariable]"
@@ -95,24 +118,24 @@
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NombreVariable]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Valor]"
-                          cachedDataType="cy"
+                          cachedDataType="r8"
                           cachedName="Valor"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Valor]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[anored]"
-                          cachedDataType="numeric"
+                          cachedDataType="r8"
                           cachedName="anored"
-                          cachedPrecision="18"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[anored]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[mesred]"
-                          cachedDataType="i4"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="mesred"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[mesred]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Etiqueta]"
                           cachedDataType="wstr"
-                          cachedLength="200"
+                          cachedLength="255"
                           cachedName="Etiqueta"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Etiqueta]" />
                       </inputColumns>
@@ -191,9 +214,10 @@
                         </outputColumn>
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[NombreVariable]"
-                          dataType="nText"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
+                          length="50"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[NombreVariable]"
                           name="NombreVariable"
                           truncationRowDisposition="FailComponent">
@@ -403,62 +427,67 @@
                       name="Entrada de destino de SQL Server">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Municipio]"
-                          cachedDataType="wstr"
-                          cachedLength="20"
-                          cachedName="Municipio"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Municipio]"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Municipio]" />
-                        <inputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Variable]"
-                          cachedDataType="numeric"
-                          cachedName="Variable"
-                          cachedPrecision="18"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Variable]"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Variable]" />
-                        <inputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[NombreVariable]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="NombreVariable"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Nombre_Variable]"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NombreVariable]" />
-                        <inputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Valor]"
-                          cachedDataType="cy"
-                          cachedName="Valor"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Numero]"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Valor]" />
-                        <inputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Etiqueta]"
-                          cachedDataType="wstr"
-                          cachedLength="200"
-                          cachedName="Etiqueta"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Etiqueta]"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Etiqueta]" />
-                        <inputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[anored]"
-                          cachedDataType="numeric"
-                          cachedName="anored"
-                          cachedPrecision="18"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Año]"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[anored]" />
-                        <inputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[mesred]"
-                          cachedDataType="i4"
-                          cachedName="mesred"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Mes]"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[mesred]" />
-                        <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Departamento]"
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="Departamento"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Departamento]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Departamento]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Municipio]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Municipio"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Municipio]"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Municipio]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Variable]"
+                          cachedDataType="numeric"
+                          cachedName="Variable"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Variable]"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Variable]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[NombreVariable]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="NombreVariable"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Nombre_Variable]"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[NombreVariable]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Valor]"
+                          cachedDataType="cy"
+                          cachedName="Valor"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Numero]"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Valor]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[anored]"
+                          cachedDataType="numeric"
+                          cachedName="anored"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Año]"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[anored]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[mesred]"
+                          cachedDataType="i4"
+                          cachedName="mesred"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Mes]"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[mesred]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Etiqueta]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="Etiqueta"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Etiqueta]"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Etiqueta]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Departamento]"
+                          dataType="wstr"
+                          length="20"
+                          name="Codigo_Departamento" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Municipio]"
                           dataType="wstr"
@@ -492,11 +521,6 @@
                           dataType="wstr"
                           length="200"
                           name="Etiqueta" />
-                        <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Departamento]"
-                          dataType="wstr"
-                          length="20"
-                          name="Codigo_Departamento" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -569,13 +593,12 @@
                       <outputColumns>
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Variable]"
-                          dataType="numeric"
+                          dataType="i4"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Variable]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Variable]"
                           name="Variable"
-                          precision="18"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Departamento]"
@@ -583,7 +606,7 @@
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Departamento]"
-                          length="20"
+                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Departamento]"
                           name="Departamento"
                           truncationRowDisposition="FailComponent" />
@@ -593,32 +616,32 @@
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Municipio]"
-                          length="20"
+                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Municipio]"
                           name="Municipio"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[anored]"
-                          dataType="numeric"
+                          dataType="r8"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[anored]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[anored]"
                           name="anored"
-                          precision="18"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[mesred]"
-                          dataType="i4"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[mesred]"
+                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[mesred]"
                           name="mesred"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Valor]"
-                          dataType="cy"
+                          dataType="r8"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Valor]"
@@ -641,7 +664,7 @@
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Etiqueta]"
-                          length="200"
+                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Etiqueta]"
                           name="Etiqueta"
                           truncationRowDisposition="FailComponent" />
@@ -654,11 +677,13 @@
                           name="Variable" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Departamento]"
-                          dataType="nText"
+                          dataType="wstr"
+                          length="255"
                           name="Departamento" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Municipio]"
-                          dataType="nText"
+                          dataType="wstr"
+                          length="255"
                           name="Municipio" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[anored]"
@@ -675,11 +700,13 @@
                           name="Valor" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[NombreVariable]"
-                          dataType="nText"
+                          dataType="wstr"
+                          length="255"
                           name="NombreVariable" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Etiqueta]"
-                          dataType="nText"
+                          dataType="wstr"
+                          length="255"
                           name="Etiqueta" />
                       </externalMetadataColumns>
                     </output>
@@ -695,17 +722,20 @@
                           name="Variable" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Departamento]"
-                          dataType="nText"
+                          dataType="wstr"
+                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Departamento]"
                           name="Departamento" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Municipio]"
-                          dataType="nText"
+                          dataType="wstr"
+                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Municipio]"
                           name="Municipio" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[NombreVariable]"
-                          dataType="nText"
+                          dataType="wstr"
+                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[NombreVariable]"
                           name="NombreVariable" />
                         <outputColumn
@@ -726,7 +756,8 @@
                           name="Valor" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Etiqueta]"
-                          dataType="nText"
+                          dataType="wstr"
+                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Etiqueta]"
                           name="Etiqueta" />
                         <outputColumn
@@ -762,6 +793,35 @@
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CA8F0532-A2D8-43B9-ACDE-DD403562C4B6}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}"
+              SQLTask:SqlStatementSource="exec dbo.Inicializartldata ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@CodigoCategoria"
+                SQLTask:DtsVariableName="$Package::CodigoCategoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@CodigoSubcategoria"
+                SQLTask:DtsVariableName="$Package::CodigoSubcategoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
@@ -772,6 +832,14 @@
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción"
           DTS:To="Package\Contenedor de secuencias\Excel a Stage" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{60706968-9277-4EDF-A3C3-14DFD6151037}"
+          DTS:From="Package\Contenedor de secuencias\Excel a Stage"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 1"
+          DTS:To="Package\Contenedor de secuencias\Execute SQL Task" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -786,7 +854,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="138,42"
           Id="Package\Contenedor de secuencias\Borrar Satge"
@@ -817,11 +885,37 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Contenedor de secuencias\Execute SQL Task"
+          TopLeft="15,200" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 1]"
+          TopLeft="99.25,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.5"
+              Start="0,0"
+              End="0,43">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="482,209"
-          Size="482,252"
+          PanelSize="482,311"
+          Size="482,354"
           Id="Package\Contenedor de secuencias"
           TopLeft="16.5,5.5" />
       </GraphLayout>
@@ -831,33 +925,33 @@
     design-time-name="Package\Contenedor de secuencias\Excel a Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="185,42"
+          Size="192,42"
           Id="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server"
-          TopLeft="38.5,195.5" />
+          TopLeft="38.5,196.5" />
         <NodeLayout
           Size="153,42"
           Id="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel"
-          TopLeft="42.5,18.5" />
+          TopLeft="42.5,17.5" />
         <NodeLayout
           Size="175,42"
           Id="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos"
           TopLeft="38.5,96.5" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias\Excel a Stage.Paths[Salida de origen de Excel]"
-          TopLeft="122.5,60.5">
+          TopLeft="122.5,59.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36"
+              EndConnector="0,37"
               Start="0,0"
-              End="0,28.5">
+              End="0,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="0,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -868,26 +962,36 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Contenedor de secuencias\Excel a Stage.Paths[Salida de conversión de datos]"
-          TopLeft="128.5,138.5">
+          TopLeft="126,138.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57"
+              EndConnector="8.5,58"
               Start="0,0"
-              End="0,49.5">
+              End="8.5,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.5" />
+                    End="0,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25"
+                    Point2="0,29"
+                    Point3="4,29" />
+                  <mssgle:LineSegment
+                    End="4.5,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.5,29"
+                    Point2="8.5,29"
+                    Point3="8.5,33" />
+                  <mssgle:LineSegment
+                    End="8.5,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,16.75,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
