@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="PackageANT"
   DTS:PackageType="5"
-  DTS:VersionBuild="46"
-  DTS:VersionGUID="{3E46DD68-17FB-4674-A283-2F3F3AFE924B}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{DF749C8B-477E-47C7-A16B-631F9F674FC8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -225,6 +225,12 @@
                           cachedLength="255"
                           cachedName="Código Departamento"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Código Departamento]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Nombre Variable (Nombre del Indicador]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Nombre Variable (Nombre del Indicador"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Nombre Variable (Nombre del Indicador]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -381,6 +387,27 @@
                               name="FastParse">false</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Nombre Variable (Nombre del Indicador]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          length="255"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Nombre Variable (Nombre del Indicador]"
+                          name="Copia de Nombre Variable (Nombre del Indicador"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                              name="SourceInputColumnLineageID">#{Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Nombre Variable (Nombre del Indicador]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -497,89 +524,96 @@
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="Copia de Código Departamento"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Código Departamento]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Departamento]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Código Departamento]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Copia de Código Municipio]"
                           cachedDataType="wstr"
                           cachedLength="20"
                           cachedName="Copia de Código Municipio"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Código Municipio]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Municipio]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Código Municipio]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Copia de Código Variable]"
+                          cachedDataType="numeric"
+                          cachedName="Copia de Código Variable"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Variable]"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Código Variable]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Copia de Numero (Valor cuantitativo)]"
                           cachedDataType="cy"
                           cachedName="Copia de Numero (Valor cuantitativo)"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Numero (Valor cuantitativo)]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Numero]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Numero (Valor cuantitativo)]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Copia de Año (Año de vigencia del dato)]"
                           cachedDataType="numeric"
                           cachedName="Copia de Año (Año de vigencia del dato)"
                           cachedPrecision="18"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Año (Año de vigencia del dato)]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Año]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Año (Año de vigencia del dato)]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Copia de Mes (Mes de vigencia del dato)]"
                           cachedDataType="i4"
                           cachedName="Copia de Mes (Mes de vigencia del dato)"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Mes (Mes de vigencia del dato)]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Mes]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Mes (Mes de vigencia del dato)]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Copia de Etiqueta (Valor alfanumérico de gestión )]"
                           cachedDataType="wstr"
                           cachedLength="200"
                           cachedName="Copia de Etiqueta (Valor alfanumérico de gestión )"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Etiqueta (Valor alfanumérico de gestión )]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Etiqueta]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Etiqueta (Valor alfanumérico de gestión )]" />
                         <inputColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Copia de Código Variable]"
-                          cachedDataType="numeric"
-                          cachedName="Copia de Código Variable"
-                          cachedPrecision="18"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Código Variable]"
-                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Código Variable]" />
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].Columns[Copia de Nombre Variable (Nombre del Indicador]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Copia de Nombre Variable (Nombre del Indicador"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Nombre_Variable]"
+                          lineageId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de Nombre Variable (Nombre del Indicador]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Código Departamento]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Departamento]"
                           dataType="wstr"
                           length="20"
-                          name="Código Departamento" />
+                          name="Codigo_Departamento" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Código Municipio]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Municipio]"
                           dataType="wstr"
                           length="20"
-                          name="Código Municipio" />
+                          name="Codigo_Municipio" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Código Variable]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Codigo_Variable]"
                           dataType="numeric"
-                          name="Código Variable"
+                          name="Codigo_Variable"
                           precision="18" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Nombre Variable (Nombre del Indicador]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Nombre_Variable]"
                           dataType="wstr"
                           length="255"
-                          name="Nombre Variable (Nombre del Indicador" />
+                          name="Nombre_Variable" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Numero (Valor cuantitativo)]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Numero]"
                           dataType="cy"
-                          name="Numero (Valor cuantitativo)" />
+                          name="Numero" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Año (Año de vigencia del dato)]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Año]"
                           dataType="numeric"
-                          name="Año (Año de vigencia del dato)"
+                          name="Año"
                           precision="18" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Mes (Mes de vigencia del dato)]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Mes]"
                           dataType="i4"
-                          name="Mes (Mes de vigencia del dato)" />
+                          name="Mes" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Etiqueta (Valor alfanumérico de gestión )]"
+                          refId="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server.Inputs[Entrada de destino de SQL Server].ExternalColumns[Etiqueta]"
                           dataType="wstr"
                           length="200"
-                          name="Etiqueta (Valor alfanumérico de gestión )" />
+                          name="Etiqueta" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>

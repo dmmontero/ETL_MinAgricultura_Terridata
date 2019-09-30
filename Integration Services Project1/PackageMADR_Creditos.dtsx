@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="PackageMADR_Creditos"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{3802CFB1-18FB-4E2A-9CA4-388E79F4A4F3}">
+  DTS:VersionBuild="91"
+  DTS:VersionGUID="{0C97228C-96DA-474E-95D5-0E7A8BD43997}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -68,6 +68,35 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\Completar Data"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Esta tarea completa los datos de cada variabel en la tabla tlData pues cada inidciadro debe contener los datos asi sen nulos  del curce de tlDeoartamento y tlMunicipio"
+          DTS:DTSID="{CA8F0532-A2D8-43B9-ACDE-DD403562C4B6}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Completar Data"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}"
+              SQLTask:SqlStatementSource="exec dbo.Inicializartldata ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@CodigoCategoria"
+                SQLTask:DtsVariableName="$Package::CodigoCategoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@CodigoSubcategoria"
+                SQLTask:DtsVariableName="$Package::CodigoSubcategoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Contenedor de secuencias\Excel a Stage"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Tarea Flujo de datos"
@@ -95,14 +124,12 @@
                       <inputColumns>
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Departamento]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
+                          cachedDataType="nText"
                           cachedName="Departamento"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Departamento]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Municipio]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
+                          cachedDataType="nText"
                           cachedName="Municipio"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Municipio]" />
                         <inputColumn
@@ -112,8 +139,7 @@
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Variable]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[NombreVariable]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
+                          cachedDataType="nText"
                           cachedName="NombreVariable"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NombreVariable]" />
                         <inputColumn
@@ -134,8 +160,7 @@
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[mesred]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Etiqueta]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
+                          cachedDataType="nText"
                           cachedName="Etiqueta"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Etiqueta]" />
                       </inputColumns>
@@ -550,7 +575,22 @@
                       dataType="System.String"
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT  IIF([TUSRED] = 'PEQU'   AND [PNJRED] = 'N',7,
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT  IIF([TUSRED] = 'PEQU'   AND [PNJRED] = 'N',1,
+               IIF(TUSRED = 'PEQU' AND PNJRED = 'J',2,
+               IIF(TUSRED = 'MEDI' AND PNJRED = 'N',3,
+               IIF(TUSRED = 'MEDI' AND PNJRED = 'J',4,
+               IIF(TUSRED = 'GRAN' AND PNJRED = 'N',5,
+               IIF(TUSRED = 'GRAN' AND PNJRED = 'J',6,0)))))) AS Variable ,
+               Format(DEPRED, '00')   AS   Departamento,
+               Format(MUNRED, '00000') AS Municipio,
+               '' As NombreVariable,
+               anored,
+               mesred,
+               VCRRED  AS  Valor,
+               '' AS Etiqueta
+         FROM   [Creditos$]
+UNION ALL
+SELECT  IIF([TUSRED] = 'PEQU'   AND [PNJRED] = 'N',7,
                IIF(TUSRED = 'PEQU' AND PNJRED = 'J',8,
                IIF(TUSRED = 'MEDI' AND PNJRED = 'N',9,
                IIF(TUSRED = 'MEDI' AND PNJRED = 'J',10,
@@ -602,21 +642,19 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Departamento]"
-                          dataType="wstr"
+                          dataType="nText"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Departamento]"
-                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Departamento]"
                           name="Departamento"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Municipio]"
-                          dataType="wstr"
+                          dataType="nText"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Municipio]"
-                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Municipio]"
                           name="Municipio"
                           truncationRowDisposition="FailComponent" />
@@ -650,21 +688,19 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NombreVariable]"
-                          dataType="wstr"
+                          dataType="nText"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[NombreVariable]"
-                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NombreVariable]"
                           name="NombreVariable"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Etiqueta]"
-                          dataType="wstr"
+                          dataType="nText"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Etiqueta]"
-                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Etiqueta]"
                           name="Etiqueta"
                           truncationRowDisposition="FailComponent" />
@@ -797,7 +833,7 @@
           DTS:refId="Package\Contenedor de secuencias\Execute SQL Task"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{CA8F0532-A2D8-43B9-ACDE-DD403562C4B6}"
+          DTS:DTSID="{E7FBD4AC-32C9-409E-AEB5-0ECDB26BC3C1}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Execute SQL Task"
@@ -806,7 +842,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}"
-              SQLTask:SqlStatementSource="exec dbo.Inicializartldata ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="exec ActulizarCreditos ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="@CodigoCategoria"
                 SQLTask:DtsVariableName="$Package::CodigoCategoria"
@@ -814,7 +850,7 @@
                 SQLTask:DataType="131"
                 SQLTask:ParameterSize="-1" />
               <SQLTask:ParameterBinding
-                SQLTask:ParameterName="@CodigoSubcategoria"
+                SQLTask:ParameterName="@CodigoSubCategoria"
                 SQLTask:DtsVariableName="$Package::CodigoSubcategoria"
                 SQLTask:ParameterDirection="Input"
                 SQLTask:DataType="131"
@@ -839,6 +875,14 @@
           DTS:From="Package\Contenedor de secuencias\Excel a Stage"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 1"
+          DTS:To="Package\Contenedor de secuencias\Completar Data" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{BA9869F7-AE4B-42B8-AFC4-5CD11CF159E0}"
+          DTS:From="Package\Contenedor de secuencias\Completar Data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 2"
           DTS:To="Package\Contenedor de secuencias\Execute SQL Task" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
@@ -860,9 +904,17 @@
           Id="Package\Contenedor de secuencias\Borrar Satge"
           TopLeft="28.5,27.5" />
         <NodeLayout
+          Size="170,42"
+          Id="Package\Contenedor de secuencias\Completar Data"
+          TopLeft="17,181" />
+        <NodeLayout
           Size="142,42"
           Id="Package\Contenedor de secuencias\Excel a Stage"
           TopLeft="27.5,107.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Contenedor de secuencias\Execute SQL Task"
+          TopLeft="16.5,254.5" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción]"
           TopLeft="98,69.5">
@@ -885,24 +937,42 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Contenedor de secuencias\Execute SQL Task"
-          TopLeft="15,200" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 1]"
-          TopLeft="99.25,149.5">
+          TopLeft="100.25,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.5"
+              EndConnector="0,31.5"
               Start="0,0"
-              End="0,43">
+              End="0,24">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43" />
+                    End="0,24" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 2]"
+          TopLeft="100,223">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.5"
+              Start="0,0"
+              End="0,24">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -914,8 +984,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="482,311"
-          Size="482,354"
+          PanelSize="482,352"
+          Size="482,394"
           Id="Package\Contenedor de secuencias"
           TopLeft="16.5,5.5" />
       </GraphLayout>
@@ -925,7 +995,7 @@
     design-time-name="Package\Contenedor de secuencias\Excel a Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="192,42"
           Id="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server"
@@ -933,14 +1003,14 @@
         <NodeLayout
           Size="153,42"
           Id="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel"
-          TopLeft="42.5,17.5" />
+          TopLeft="56.5,19.5" />
         <NodeLayout
           Size="175,42"
           Id="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos"
-          TopLeft="38.5,96.5" />
+          TopLeft="52.5,98.5" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias\Excel a Stage.Paths[Salida de origen de Excel]"
-          TopLeft="122.5,59.5">
+          TopLeft="136.5,61.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -962,36 +1032,26 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Contenedor de secuencias\Excel a Stage.Paths[Salida de conversión de datos]"
-          TopLeft="126,138.5">
+          TopLeft="137.25,140.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.5,58"
+              EndConnector="0,56"
               Start="0,0"
-              End="8.5,50.5">
+              End="0,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25"
-                    Point2="0,29"
-                    Point3="4,29" />
-                  <mssgle:LineSegment
-                    End="4.5,29" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.5,29"
-                    Point2="8.5,29"
-                    Point3="8.5,33" />
-                  <mssgle:LineSegment
-                    End="8.5,50.5" />
+                    End="0,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-8,16.25,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
