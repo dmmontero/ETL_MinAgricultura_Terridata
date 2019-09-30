@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="PackageMADR_Creditos"
   DTS:PackageType="5"
-  DTS:VersionBuild="91"
-  DTS:VersionGUID="{0C97228C-96DA-474E-95D5-0E7A8BD43997}">
+  DTS:VersionBuild="93"
+  DTS:VersionGUID="{FFCFE922-E436-45BD-BEE9-94CA4EC4CEA3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
@@ -51,6 +51,35 @@
       DTS:ObjectName="Contenedor de secuencias">
       <DTS:Variables />
       <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\Actualizar Data"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E7FBD4AC-32C9-409E-AEB5-0ECDB26BC3C1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Actualizar Data"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}"
+              SQLTask:SqlStatementSource="exec ActualizarCreditos ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@CodigoCategoria"
+                SQLTask:DtsVariableName="$Package::CodigoCategoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="@CodigoSubCategoria"
+                SQLTask:DtsVariableName="$Package::CodigoSubcategoria"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Contenedor de secuencias\Borrar Satge"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -829,35 +858,6 @@ SELECT  IIF([TUSRED] = 'PEQU'   AND [PNJRED] = 'N',7,
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Contenedor de secuencias\Execute SQL Task"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{E7FBD4AC-32C9-409E-AEB5-0ECDB26BC3C1}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Execute SQL Task"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}"
-              SQLTask:SqlStatementSource="exec ActulizarCreditos ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="@CodigoCategoria"
-                SQLTask:DtsVariableName="$Package::CodigoCategoria"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="131"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="@CodigoSubCategoria"
-                SQLTask:DtsVariableName="$Package::CodigoSubcategoria"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="131"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
@@ -883,7 +883,7 @@ SELECT  IIF([TUSRED] = 'PEQU'   AND [PNJRED] = 'N',7,
           DTS:From="Package\Contenedor de secuencias\Completar Data"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 2"
-          DTS:To="Package\Contenedor de secuencias\Execute SQL Task" />
+          DTS:To="Package\Contenedor de secuencias\Actualizar Data" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -912,9 +912,9 @@ SELECT  IIF([TUSRED] = 'PEQU'   AND [PNJRED] = 'N',7,
           Id="Package\Contenedor de secuencias\Excel a Stage"
           TopLeft="27.5,107.5" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Contenedor de secuencias\Execute SQL Task"
-          TopLeft="16.5,254.5" />
+          Size="154,42"
+          Id="Package\Contenedor de secuencias\Actualizar Data"
+          TopLeft="22.5,256.5" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción]"
           TopLeft="98,69.5">
@@ -961,18 +961,18 @@ SELECT  IIF([TUSRED] = 'PEQU'   AND [PNJRED] = 'N',7,
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 2]"
-          TopLeft="100,223">
+          TopLeft="100.75,223">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.5"
+              EndConnector="0,33.5"
               Start="0,0"
-              End="0,24">
+              End="0,26">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24" />
+                    End="0,26" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -985,7 +985,7 @@ SELECT  IIF([TUSRED] = 'PEQU'   AND [PNJRED] = 'N',7,
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="482,352"
-          Size="482,394"
+          Size="482,395"
           Id="Package\Contenedor de secuencias"
           TopLeft="16.5,5.5" />
       </GraphLayout>
