@@ -11,10 +11,102 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="PackageMADR_Viviendas"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{E48EA99D-0BFB-4F9B-8E12-3DF0521863AC}">
+  DTS:VersionBuild="79"
+  DTS:VersionGUID="{4168B5A0-669F-458C-8D03-8DC3086BC7A6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[tlDataStageErr]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7F954104-300E-40D2-902E-42E539F12823}"
+      DTS:ObjectName="tlDataStageErr">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="9226"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\dmontero\Documents\SQL Server Management Studio\ETL-TERIDATA\tlDataStageErr.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codigo_Departamento"
+              DTS:DTSID="{DD7C390F-D74B-420D-BC62-39C57AD6D768}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codigo_Municipio"
+              DTS:DTSID="{3981EF06-310A-4EAB-AD1A-3CFBAEDA0DE0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codigo_Variable"
+              DTS:DTSID="{B1B94B1D-3DC0-43A7-AA8B-9C5F959C51C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nombre_Variable"
+              DTS:DTSID="{039FE88A-E2FD-4D50-9CE7-C16690C2CB0F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Numero"
+              DTS:DTSID="{9DB5C07D-A264-442F-AAFF-F6772C1BD4DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Año"
+              DTS:DTSID="{F0A9F9B8-F772-460A-9EB1-75353A0ADA64}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Mes"
+              DTS:DTSID="{A30208B2-42DB-46E8-83E1-64CA2E1574EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Etiqueta"
+              DTS:DTSID="{2BAB7320-2E85-4310-9F56-B7BDA8702604}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
@@ -161,9 +253,8 @@
                       <inputColumns>
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Codigo_Variable]"
-                          cachedDataType="numeric"
+                          cachedDataType="i4"
                           cachedName="Codigo_Variable"
-                          cachedPrecision="18"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Codigo_Variable]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Cod_Depto]"
@@ -179,13 +270,13 @@
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Dept_Mun]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Anio]"
-                          cachedDataType="numeric"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="Anio"
-                          cachedPrecision="18"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Anio]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Cantidad]"
-                          cachedDataType="cy"
+                          cachedDataType="r8"
                           cachedName="Cantidad"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Cantidad]" />
                         <inputColumn
@@ -195,14 +286,12 @@
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Mes]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Etiqueta]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
+                          cachedDataType="nText"
                           cachedName="Etiqueta"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Etiqueta]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[NombreVariable]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
+                          cachedDataType="nText"
                           cachedName="NombreVariable"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NombreVariable]" />
                       </inputColumns>
@@ -662,13 +751,12 @@ GROUP BY
                       <outputColumns>
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Codigo_Variable]"
-                          dataType="numeric"
+                          dataType="i4"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Codigo_Variable]"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Codigo_Variable]"
                           name="Codigo_Variable"
-                          precision="18"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Cod_Depto]"
@@ -692,17 +780,17 @@ GROUP BY
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Anio]"
-                          dataType="numeric"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Anio]"
+                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Anio]"
                           name="Anio"
-                          precision="18"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Cantidad]"
-                          dataType="cy"
+                          dataType="r8"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Cantidad]"
@@ -720,21 +808,19 @@ GROUP BY
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Etiqueta]"
-                          dataType="wstr"
+                          dataType="nText"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Etiqueta]"
-                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Etiqueta]"
                           name="Etiqueta"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NombreVariable]"
-                          dataType="wstr"
+                          dataType="nText"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[NombreVariable]"
-                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NombreVariable]"
                           name="NombreVariable"
                           truncationRowDisposition="FailComponent" />
@@ -770,13 +856,11 @@ GROUP BY
                           name="Mes" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Etiqueta]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="nText"
                           name="Etiqueta" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[NombreVariable]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="nText"
                           name="NombreVariable" />
                       </externalMetadataColumns>
                     </output>
@@ -792,8 +876,7 @@ GROUP BY
                           name="Codigo_Variable" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[NombreVariable]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="nText"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[NombreVariable]"
                           name="NombreVariable" />
                         <outputColumn
@@ -826,8 +909,7 @@ GROUP BY
                           name="Cantidad" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Etiqueta]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="nText"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Etiqueta]"
                           name="Etiqueta" />
                         <outputColumn
@@ -863,6 +945,415 @@ GROUP BY
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\Los que no cargaron"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{d558be7e-a0c2-498d-9a86-82860da77b79}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Los que no cargaron"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Destino de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+                  description="Destino de archivo plano"
+                  localeId="9226"
+                  name="Destino de archivo plano">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica si los datos sobrescriben el archivo de destino o se anexan al mismo."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Especifica el texto para escribir en el archivo de destino antes de escribir ningún dato."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="Cuando el calificador de texto está habilitado, especifica si este contendrá secuencias de escape o no en los datos escritos en el archivo de destino."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[tlDataStageErr]"
+                      connectionManagerRefId="Package.ConnectionManagers[tlDataStageErr]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+                      hasSideEffects="true"
+                      name="Entrada de destino de archivo plano">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[Codigo_Departamento]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Codigo_Departamento"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Codigo_Departamento]"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Codigo_Departamento]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[Codigo_Municipio]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="Codigo_Municipio"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Codigo_Municipio]"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Codigo_Municipio]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[Codigo_Variable]"
+                          cachedDataType="numeric"
+                          cachedName="Codigo_Variable"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Codigo_Variable]"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Codigo_Variable]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[Nombre_Variable]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Nombre_Variable"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Nombre_Variable]"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Nombre_Variable]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[Numero]"
+                          cachedDataType="cy"
+                          cachedName="Numero"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Numero]"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Numero]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[Año]"
+                          cachedDataType="numeric"
+                          cachedName="Año"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Año]"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Año]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[Mes]"
+                          cachedDataType="i4"
+                          cachedName="Mes"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Mes]"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Mes]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].Columns[Etiqueta]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="Etiqueta"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Etiqueta]"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Etiqueta]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Codigo_Departamento]"
+                          dataType="wstr"
+                          length="20"
+                          name="Codigo_Departamento" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Codigo_Municipio]"
+                          dataType="wstr"
+                          length="20"
+                          name="Codigo_Municipio" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Codigo_Variable]"
+                          dataType="numeric"
+                          name="Codigo_Variable"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Nombre_Variable]"
+                          dataType="wstr"
+                          length="255"
+                          name="Nombre_Variable" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Numero]"
+                          dataType="cy"
+                          name="Numero" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Año]"
+                          dataType="numeric"
+                          name="Año"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Mes]"
+                          dataType="i4"
+                          name="Mes" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano].ExternalColumns[Etiqueta]"
+                          dataType="wstr"
+                          length="200"
+                          name="Etiqueta" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+                  description="Origen de OLE DB"
+                  name="Origen de OLE DB"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowset">[dbo].[tlDataStageErr]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="Comando SQL para ejecutar."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="Variable que contiene el comando SQL para ejecutar."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Asignaciones entre los parámetros del comando SQL y las variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DDDR_TDT]"
+                      description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB]"
+                      name="Salida de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Codigo_Departamento]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Codigo_Departamento]"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Codigo_Departamento]"
+                          name="Codigo_Departamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Codigo_Municipio]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Codigo_Municipio]"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Codigo_Municipio]"
+                          name="Codigo_Municipio"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Codigo_Variable]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Codigo_Variable]"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Codigo_Variable]"
+                          name="Codigo_Variable"
+                          precision="18"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Nombre_Variable]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Nombre_Variable]"
+                          length="255"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Nombre_Variable]"
+                          name="Nombre_Variable"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Numero]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Numero]"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Numero]"
+                          name="Numero"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Año]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Año]"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Año]"
+                          name="Año"
+                          precision="18"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Mes]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Mes]"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Mes]"
+                          name="Mes"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Etiqueta]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Etiqueta]"
+                          length="200"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].Columns[Etiqueta]"
+                          name="Etiqueta"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Codigo_Departamento]"
+                          dataType="wstr"
+                          length="20"
+                          name="Codigo_Departamento" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Codigo_Municipio]"
+                          dataType="wstr"
+                          length="20"
+                          name="Codigo_Municipio" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Codigo_Variable]"
+                          dataType="numeric"
+                          name="Codigo_Variable"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Nombre_Variable]"
+                          dataType="wstr"
+                          length="255"
+                          name="Nombre_Variable" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Numero]"
+                          dataType="cy"
+                          name="Numero" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Año]"
+                          dataType="numeric"
+                          name="Año"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Mes]"
+                          dataType="i4"
+                          name="Mes" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB].ExternalColumns[Etiqueta]"
+                          dataType="wstr"
+                          length="200"
+                          name="Etiqueta" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de OLE DB">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Codigo_Departamento]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Codigo_Departamento]"
+                          name="Codigo_Departamento" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Codigo_Municipio]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Codigo_Municipio]"
+                          name="Codigo_Municipio" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Codigo_Variable]"
+                          dataType="numeric"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Codigo_Variable]"
+                          name="Codigo_Variable"
+                          precision="18" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Nombre_Variable]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Nombre_Variable]"
+                          name="Nombre_Variable" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Numero]"
+                          dataType="cy"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Numero]"
+                          name="Numero" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Año]"
+                          dataType="numeric"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Año]"
+                          name="Año"
+                          precision="18" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Mes]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Mes]"
+                          name="Mes" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Etiqueta]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[Etiqueta]"
+                          name="Etiqueta" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contenedor de secuencias\Los que no cargaron.Paths[Salida de origen de OLE DB]"
+                  endId="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano.Inputs[Entrada de destino de archivo plano]"
+                  name="Salida de origen de OLE DB"
+                  startId="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB.Outputs[Salida de origen de OLE DB]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
@@ -889,6 +1380,14 @@ GROUP BY
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 2"
           DTS:To="Package\Contenedor de secuencias\Actualizar Data" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{423A4787-60E3-46C6-972B-B71C184C8E9B}"
+          DTS:From="Package\Contenedor de secuencias\Actualizar Data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 3"
+          DTS:To="Package\Contenedor de secuencias\Los que no cargaron" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -903,7 +1402,11 @@ GROUP BY
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Contenedor de secuencias\Actualizar Data"
+          TopLeft="36.5,249.043640897756" />
         <NodeLayout
           Size="160,42"
           Id="Package\Contenedor de secuencias\Borrar Satge"
@@ -960,24 +1463,46 @@ GROUP BY
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Contenedor de secuencias\Actualizar Data"
-          TopLeft="36.5,249.043640897756" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 2]"
-          TopLeft="115.25,214">
+          TopLeft="114.25,214">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.0436408977556"
+              EndConnector="0,35.043640897756"
               Start="0,0"
-              End="0,27.5436408977556">
+              End="0,27.543640897756">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5436408977556" />
+                    End="0,27.543640897756" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Contenedor de secuencias\Los que no cargaron"
+          TopLeft="29,326" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 3]"
+          TopLeft="114,291.043640897756">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.956359102244"
+              Start="0,0"
+              End="0,27.456359102244">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.456359102244" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -989,8 +1514,8 @@ GROUP BY
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="391,349"
-          Size="391,392"
+          PanelSize="429,423"
+          Size="429,466"
           Id="Package\Contenedor de secuencias"
           TopLeft="10.5,5.5" />
       </GraphLayout>
@@ -1081,5 +1606,43 @@ GROUP BY
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Contenedor de secuencias\Los que no cargaron">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano"
+          TopLeft="294,142" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB"
+          TopLeft="306,33" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\Los que no cargaron.Paths[Salida de origen de OLE DB]"
+          TopLeft="389.75,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67"
+              Start="0,0"
+              End="0,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
