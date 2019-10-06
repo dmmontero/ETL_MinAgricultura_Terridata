@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="PackageANT"
   DTS:PackageType="5"
-  DTS:VersionBuild="62"
-  DTS:VersionGUID="{BAEB504A-19B8-4A8E-AFC6-4FB028057DEA}">
+  DTS:VersionBuild="64"
+  DTS:VersionGUID="{88F4BA48-144B-422E-8FA7-F11531904C1E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -111,6 +111,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
+      DTS:Description="Categoria a la cual pertence el indicador"
       DTS:DTSID="{D7AE86A6-AC5F-4106-8F57-A79131B36900}"
       DTS:ObjectName="CodigoCategoria"
       DTS:Required="True">
@@ -121,6 +122,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
+      DTS:Description="SubCategoria a la cual pertence el indicador"
       DTS:DTSID="{BDFE9834-06C9-4913-B481-F707D869E13C}"
       DTS:ObjectName="CodigoSubCategoria"
       DTS:Required="True">
@@ -1514,7 +1516,7 @@
     design-time-name="Package\Contenedor de secuencias\Excel a Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="185,42"
           Id="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server"
@@ -1546,9 +1548,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1570,9 +1570,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="PackageMADR_Viviendas"
   DTS:PackageType="5"
-  DTS:VersionBuild="79"
-  DTS:VersionGUID="{4168B5A0-669F-458C-8D03-8DC3086BC7A6}">
+  DTS:VersionBuild="80"
+  DTS:VersionGUID="{2DB03BC3-7A4A-4C3D-99FB-C3ADE7D161C4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -111,6 +111,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
+      DTS:Description="Categoria a la cual pertence el indicador"
       DTS:DTSID="{05503A93-84D5-4B2A-8FDA-D6DCFE2A6B90}"
       DTS:ObjectName="CodigoCategoria"
       DTS:Required="True">
@@ -121,6 +122,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="3"
+      DTS:Description="SubCategoria a la cual pertence el indicador"
       DTS:DTSID="{E23C5657-678E-4755-9115-E239F1EA49F6}"
       DTS:ObjectName="CodigoSubCategoria"
       DTS:Required="True">
@@ -1419,6 +1421,10 @@ GROUP BY
           Size="176,42"
           Id="Package\Contenedor de secuencias\Excel a Stage"
           TopLeft="27.5,89.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Contenedor de secuencias\Los que no cargaron"
+          TopLeft="29,326" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción]"
           TopLeft="118.25,59">
@@ -1485,10 +1491,6 @@ GROUP BY
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Contenedor de secuencias\Los que no cargaron"
-          TopLeft="29,326" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 3]"
           TopLeft="114,291.043640897756">
@@ -1525,7 +1527,7 @@ GROUP BY
     design-time-name="Package\Contenedor de secuencias\Excel a Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="185,42"
           Id="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server"
@@ -1557,7 +1559,9 @@ GROUP BY
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1579,7 +1583,9 @@ GROUP BY
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1610,15 +1616,15 @@ GROUP BY
     design-time-name="Package\Contenedor de secuencias\Los que no cargaron">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="195,42"
-          Id="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano"
-          TopLeft="294,142" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="164,42"
           Id="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB"
           TopLeft="306,33" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Contenedor de secuencias\Los que no cargaron\Destino de archivo plano"
+          TopLeft="294,142" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias\Los que no cargaron.Paths[Salida de origen de OLE DB]"
           TopLeft="389.75,75">
@@ -1638,7 +1644,9 @@ GROUP BY
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
