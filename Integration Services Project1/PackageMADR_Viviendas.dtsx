@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="PackageMADR_Viviendas"
   DTS:PackageType="5"
-  DTS:VersionBuild="80"
-  DTS:VersionGUID="{2DB03BC3-7A4A-4C3D-99FB-C3ADE7D161C4}">
+  DTS:VersionBuild="84"
+  DTS:VersionGUID="{BFBBF740-41EE-4077-8A03-DBAFCB287783}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -39,7 +39,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Codigo_Departamento"
-              DTS:DTSID="{DD7C390F-D74B-420D-BC62-39C57AD6D768}"
+              DTS:DTSID="{D01264A6-7250-4D7D-936F-03C7D97F7A04}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Codigo_Municipio"
-              DTS:DTSID="{3981EF06-310A-4EAB-AD1A-3CFBAEDA0DE0}"
+              DTS:DTSID="{6BE8ACEC-B1F2-415D-B8BE-E85CB22BF6B4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataPrecision="18"
               DTS:TextQualified="True"
               DTS:ObjectName="Codigo_Variable"
-              DTS:DTSID="{B1B94B1D-3DC0-43A7-AA8B-9C5F959C51C5}"
+              DTS:DTSID="{68590DF8-3E6F-4B97-9323-44F2195C010B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Nombre_Variable"
-              DTS:DTSID="{039FE88A-E2FD-4D50-9CE7-C16690C2CB0F}"
+              DTS:DTSID="{DED8153D-4C0A-4EB1-AD0B-3304705D44F2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -74,7 +74,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="Numero"
-              DTS:DTSID="{9DB5C07D-A264-442F-AAFF-F6772C1BD4DC}"
+              DTS:DTSID="{73AFA0A1-10EB-48DF-8157-03A83D8C620C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -83,7 +83,7 @@
               DTS:DataPrecision="18"
               DTS:TextQualified="True"
               DTS:ObjectName="Año"
-              DTS:DTSID="{F0A9F9B8-F772-460A-9EB1-75353A0ADA64}"
+              DTS:DTSID="{5DA12D1F-9B3E-4EE3-A764-7BA52D7072CB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -91,7 +91,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="Mes"
-              DTS:DTSID="{A30208B2-42DB-46E8-83E1-64CA2E1574EB}"
+              DTS:DTSID="{1A6C96DC-17EA-4B3C-917F-F0DCF570E8A3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -100,7 +100,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="Etiqueta"
-              DTS:DTSID="{2BAB7320-2E85-4310-9F56-B7BDA8702604}"
+              DTS:DTSID="{FA688813-47AD-4834-B10B-11ED905B8739}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -166,7 +166,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{17B5752A-CA60-4079-ACF5-6FF4A6C29AD2}"
-              SQLTask:SqlStatementSource="exec ActualizarCreditos ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              SQLTask:SqlStatementSource="exec ActualizarViviendas ?,?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="@CodigoCategoria"
                 SQLTask:DtsVariableName="$Package::CodigoCategoria"
@@ -288,12 +288,14 @@
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Mes]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Etiqueta]"
-                          cachedDataType="nText"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="Etiqueta"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Etiqueta]" />
                         <inputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[NombreVariable]"
-                          cachedDataType="nText"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="NombreVariable"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NombreVariable]" />
                       </inputColumns>
@@ -709,7 +711,8 @@
                       description="Comando SQL para ejecutar."
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
-           3 as Codigo_Variable,
+          IIF([Tipo Sol] = 'A',3,
+          IIF([Tipo Sol] = 'B',4,0))  as Codigo_Variable,
            '' as NombreVariable,
            A.Cod_Depto,
            A.Dept_Mun,
@@ -723,7 +726,8 @@ WHERE A.[Año Terminación] IS NOT NULL
 GROUP BY
            A.Cod_Depto,
            A.Dept_Mun,
-           A.[Año Terminación]</property>
+           A.[Año Terminación],
+          A.[Tipo Sol]</property>
                     <property
                       dataType="System.String"
                       description="Variable que contiene el comando SQL para ejecutar."
@@ -810,19 +814,21 @@ GROUP BY
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Etiqueta]"
-                          dataType="nText"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Etiqueta]"
+                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[Etiqueta]"
                           name="Etiqueta"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NombreVariable]"
-                          dataType="nText"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[NombreVariable]"
+                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].Columns[NombreVariable]"
                           name="NombreVariable"
                           truncationRowDisposition="FailComponent" />
@@ -858,11 +864,13 @@ GROUP BY
                           name="Mes" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[Etiqueta]"
-                          dataType="nText"
+                          dataType="wstr"
+                          length="255"
                           name="Etiqueta" />
                         <externalMetadataColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[NombreVariable]"
-                          dataType="nText"
+                          dataType="wstr"
+                          length="255"
                           name="NombreVariable" />
                       </externalMetadataColumns>
                     </output>
@@ -878,7 +886,8 @@ GROUP BY
                           name="Codigo_Variable" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[NombreVariable]"
-                          dataType="nText"
+                          dataType="wstr"
+                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[NombreVariable]"
                           name="NombreVariable" />
                         <outputColumn
@@ -911,7 +920,8 @@ GROUP BY
                           name="Cantidad" />
                         <outputColumn
                           refId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Etiqueta]"
-                          dataType="nText"
+                          dataType="wstr"
+                          length="255"
                           lineageId="Package\Contenedor de secuencias\Excel a Stage\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[Etiqueta]"
                           name="Etiqueta" />
                         <outputColumn
@@ -1422,7 +1432,7 @@ GROUP BY
           Id="Package\Contenedor de secuencias\Excel a Stage"
           TopLeft="27.5,89.5" />
         <NodeLayout
-          Size="175,42"
+          Size="179,42"
           Id="Package\Contenedor de secuencias\Los que no cargaron"
           TopLeft="29,326" />
         <EdgeLayout
@@ -1493,7 +1503,7 @@ GROUP BY
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 3]"
-          TopLeft="114,291.043640897756">
+          TopLeft="115,291.043640897756">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1527,7 +1537,7 @@ GROUP BY
     design-time-name="Package\Contenedor de secuencias\Excel a Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="185,42"
           Id="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server"
@@ -1559,9 +1569,7 @@ GROUP BY
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1583,9 +1591,7 @@ GROUP BY
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1616,7 +1622,7 @@ GROUP BY
     design-time-name="Package\Contenedor de secuencias\Los que no cargaron">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="164,42"
           Id="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB"
@@ -1644,13 +1650,24 @@ GROUP BY
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias\Los que no cargaron\Origen de OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

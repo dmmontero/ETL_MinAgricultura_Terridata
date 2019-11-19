@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="PackageMADR_Creditos"
   DTS:PackageType="5"
-  DTS:VersionBuild="100"
-  DTS:VersionGUID="{C32A421C-DE00-45E1-BCEE-0CBFD722D1E1}">
+  DTS:VersionBuild="101"
+  DTS:VersionGUID="{CC942B7B-741D-4900-8325-F2D9250E253F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1430,6 +1430,10 @@ SELECT  IIF(TUSRED = 'PEQU'   AND [PNJRED] = 'N',7,
           Size="142,42"
           Id="Package\Contenedor de secuencias\Excel a Stage"
           TopLeft="27.5,107.5" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Contenedor de secuencias\Los que no cargaron"
+          TopLeft="13,329" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción]"
           TopLeft="98,69.5">
@@ -1496,10 +1500,6 @@ SELECT  IIF(TUSRED = 'PEQU'   AND [PNJRED] = 'N',7,
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Contenedor de secuencias\Los que no cargaron"
-          TopLeft="13,329" />
         <EdgeLayout
           Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 3]"
           TopLeft="100.25,298.5">
@@ -1536,7 +1536,7 @@ SELECT  IIF(TUSRED = 'PEQU'   AND [PNJRED] = 'N',7,
     design-time-name="Package\Contenedor de secuencias\Excel a Stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="192,42"
           Id="Package\Contenedor de secuencias\Excel a Stage\Destino de SQL Server"
@@ -1590,9 +1590,7 @@ SELECT  IIF(TUSRED = 'PEQU'   AND [PNJRED] = 'N',7,
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,16.25,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

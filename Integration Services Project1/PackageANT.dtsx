@@ -11,8 +11,8 @@
   DTS:LocaleID="9226"
   DTS:ObjectName="PackageANT"
   DTS:PackageType="5"
-  DTS:VersionBuild="64"
-  DTS:VersionGUID="{88F4BA48-144B-422E-8FA7-F11531904C1E}">
+  DTS:VersionBuild="67"
+  DTS:VersionGUID="{EF9108A2-6109-4751-9977-BC0470281730}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
